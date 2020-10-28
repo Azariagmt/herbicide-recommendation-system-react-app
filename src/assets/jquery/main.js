@@ -40,7 +40,7 @@ $(document).ready(function () {
     // Make prediction by calling api /predict
     $.ajax({
       type: "POST",
-      url: "/predict",
+      url: "https://herbicide-recommendation.herokuapp.com/predict",
       data: form_data,
       contentType: false,
       cache: false,
