@@ -1,5 +1,8 @@
 import React from "react";
+
+import '../../assets/jquery/main.js'
 import './WebApp.css'
+
 
 function Web() {
   return (
