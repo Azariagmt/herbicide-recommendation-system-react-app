@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-flow: column;
+  width: 50%;
+  /* justify-content: center; */
+  margin: auto;
+  margin-top: 5rem;
+}
+
+button {
+  border: 1px solid grey;
+  padding: 1rem;
+}
+
+form input[type="text"] {
+  height: 4rem;
+}
+
+form input::placeholder {
+    font-size: 2rem;
+}

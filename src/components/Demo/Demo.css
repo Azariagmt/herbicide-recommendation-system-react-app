@@ -1,0 +1,10 @@
+.demo{
+    margin: -20vh auto;
+    padding: 7rem 0;
+    padding-top: 20rem ;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6rem;
+}
+
