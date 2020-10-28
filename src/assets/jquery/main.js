@@ -48,7 +48,7 @@ $(document).ready(function () {
     //   crossDomain: true,
     //  mode: 'cors',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/x-www-form-urlencoded'
     },
      credentials: 'include',
       contentType: false,
