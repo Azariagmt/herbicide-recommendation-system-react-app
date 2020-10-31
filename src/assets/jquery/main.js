@@ -1,4 +1,4 @@
-import $ from 'jquery'
+import $ from "jquery";
 
 $(document).ready(function () {
   // Init
@@ -31,9 +31,8 @@ $(document).ready(function () {
 
   // Predict
   $("#btn-predict").click(function () {
-
     var form_data = new FormData($("#upload-file")[0]);
-    console.log('FORM DATA: ', form_data)
+    console.log("FORM DATA: ", form_data);
 
     // Show loading animation
     $(this).hide();
@@ -43,15 +42,12 @@ $(document).ready(function () {
     $.ajax({
       type: "POST",
       url: "https://herbicide-recommendation.herokuapp.com/predict",
-    //   headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
+      //   headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
       data: form_data,
-    //   crossDomain: true,
-    //  mode: 'cors',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-    },
-     credentials: 'include',
-      contentType: 'multipart/form-data',
+      //   crossDomain: true,
+      //  mode: 'cors',
+      credentials: "include",
+      contentType: "multipart/form-data",
       cache: false,
       processData: false,
       async: true,
@@ -63,9 +59,9 @@ $(document).ready(function () {
         $("#result").text(" Result:  " + data);
         console.log("Success!");
       },
-      error: function (err){
-          console.log(err)
-      }
+      error: function (err) {
+        console.log(err);
+      },
     });
   });
 });
