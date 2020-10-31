@@ -51,7 +51,7 @@ $(document).ready(function () {
         'Content-Type': 'application/x-www-form-urlencoded'
     },
      credentials: 'include',
-      contentType: false,
+      contentType: 'multipart/form-data',
       cache: false,
       processData: false,
       async: true,
