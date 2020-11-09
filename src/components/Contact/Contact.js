@@ -1,16 +1,12 @@
-import React from 'react'
-import "./Contact.css";
+import React from 'react';
+import './Contact.css';
 
 function Contact() {
   return (
     <div>
-      <header class="left">
-        <form
-          id="form"
-          action="https://formspree.io/f/maylqzan"
-          method="POST"
-        >
-          <span class="heading-primary--sub">
+      <header className="left">
+        <form id="form" action="https://formspree.io/f/maylqzan" method="POST">
+          <span className="heading-primary--sub">
             We promise we love suggestions
           </span>
           <input type="text" name="_replyto" placeholder="email" />
@@ -27,8 +23,7 @@ function Contact() {
             id="sub"
             type="submit"
             value="Send"
-            class="btn btn--animated"
-
+            className="btn btn--animated"
           >
             Send
           </button>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import $ from 'jquery';
 
@@ -6,21 +6,16 @@ import '../../assets/jquery/main.js';
 import './WebApp.css';
 
 function Web() {
-  const [result, setResult] = useState('');
-
-  let predic = async event => {
-    setResult('');
+  const predic = event => {
     $('.loader').show();
     const file = event.target.files;
-    // console.log('FILEEEEEE: ', file[0]);
     const formData = new FormData();
 
     formData.append('file', file[0]);
 
-    await axios
+    axios
       .post('https://herbicide-recommendation.herokuapp.com/predict', formData)
       .then(res => {
-        setResult(res.data);
         $('.loader').hide();
         $('#result').fadeIn(600);
 
@@ -32,27 +27,30 @@ function Web() {
 
   return (
     <div>
-      <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="container">
+          <a className="navbar-brand" href="#">
             AI Demo
           </a>
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+          <button
+            className="btn btn-outline-secondary my-2 my-sm-0"
+            type="submit"
+          >
             Help
           </button>
         </div>
       </nav>
-      <div id="try" class="container">
-        <h2>Invasive species Classifier</h2>
+      <div id="try" className="container">
+        <h2>Invasive species classifier</h2>
 
         <div>
           <form
             id="upload-file"
             // action="https://herbicide-recommendation.herokuapp.com/predict"
             // method="POST"
-            enctype="multipart/form-data"
+            encType="multipart/form-data"
           >
-            <label for="imageUpload" class="upload-label">
+            <label htmlFor="imageUpload" className="upload-label">
               Choose...
             </label>
             <input
@@ -65,14 +63,14 @@ function Web() {
             {/* <button className="pred">PREDDD</button> */}
           </form>
 
-          <div class="image-section" style={{ display: 'none' }}>
-            <div class="img-preview">
+          <div className="image-section" style={{ display: 'none' }}>
+            <div className="img-preview">
               <div id="imagePreview"></div>
             </div>
             <div>
               {/* <button
                 type="button"
-                class="btn btn-primary btn-lg "
+                className="btn btn-primary btn-lg "
                 id="btn-predict"
               >
                 Predict!
@@ -80,7 +78,7 @@ function Web() {
             </div>
           </div>
 
-          <div class="loader" style={{ display: 'none' }}></div>
+          <div className="loader" style={{ display: 'none' }}></div>
 
           <h1 id="result">
             <span> </span>
